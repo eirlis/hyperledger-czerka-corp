@@ -32,3 +32,5 @@ jspm_packages/
 .env
 
 .idea/
+balance-transfer/artifacts/channel/*
+balance-transfer/artifacts/crypto-config/*
