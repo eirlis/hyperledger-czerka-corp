@@ -9,3 +9,12 @@ It's also being known as kind of a criminal entity during the Jedi Civil Wars be
 ## Purpose
 This is a common example of Hyperledger Fabric usage which covers almost every field of ledger technology usage from supply chain to property or identity certification.
 Why Czerka? Probably because this repo belongs to a Star Wars fan who was lazy enough to create own use case. 
+
+## Getting started
+### Run the network
+Go to the existing network folder. In our case it's modified [balance-transfer](https://github.com/hyperledger/fabric-samples/tree/release/balance-transfer)
+```bash
+cd balance-transfer/
+./runApp.sh
+```
+This will launch the network locally on port 4000.
