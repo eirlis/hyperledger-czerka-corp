@@ -10,6 +10,26 @@ import (
 type CzerkaContract struct {
 }
 
+type Mercenaries struct {
+	Id   string `json:"id"`
+	Name string `json:"name"`
+	Race string `json:"race"`
+	//add characteristics
+}
+
+type Office struct {
+	Id          string `json:"id"`
+	Planets     []Planets `json:"planets"`
+	Mercenaries []Mercenaries `json:"mercenaries"`
+	//add characteristics
+}
+
+type Planets struct {
+	Id   string `json:"id"`
+	Name string `json:"name"`
+	//add characteristics
+}
+
 func main() {
 	err := shim.Start(new(CzerkaContract))
 	if err != nil {
@@ -61,4 +81,10 @@ func (t *CzerkaContract) Init(stub shim.ChaincodeStubInterface) pb.Response {
 
 	fmt.Println("Ready for action") //self-test pass
 	return shim.Success(nil)
+}
+
+func (t *CzerkaContract) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
+	function, args := stub.GetFunctionAndParameters()
+	fmt.Println(" ")
+	fmt.Println("starting invoke, for - " + function)
 }
