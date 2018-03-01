@@ -10,24 +10,35 @@ import (
 type CzerkaContract struct {
 }
 
-type Mercenaries struct {
-	Id   string `json:"id"`
-	Name string `json:"name"`
-	Race string `json:"race"`
-	//add characteristics
+type Mercenary struct {
+	Id        string `json:"id"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Race      string `json:"race"`
+	Class     string `json:"class"`
 }
 
 type Office struct {
 	Id          string `json:"id"`
 	Planets     []Planets `json:"planets"`
-	Mercenaries []Mercenaries `json:"mercenaries"`
-	//add characteristics
+	Location    string `json:"location"`
+	Mercenaries []Mercenary `json:"mercenaries"`
+	Head        string `json:"head"`
 }
 
 type Planets struct {
+	Id          string `json:"id"`
+	Name        string `json:"name"`
+	Region      string `json:"region"`
+	Sector      string `json:"sector"`
+	System      string `json:"system"`
+	Coordinates string `json:"coordinates"`
+}
+
+type Supply struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
-	//add characteristics
+	Type string `json:"type"`
 }
 
 func main() {
@@ -87,4 +98,11 @@ func (t *CzerkaContract) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	function, args := stub.GetFunctionAndParameters()
 	fmt.Println(" ")
 	fmt.Println("starting invoke, for - " + function)
+
+	if function == "init" {
+		//initialize the chaincode state, used as reset
+		return t.Init(stub)
+	} else if function {
+		return
+	}
 }
