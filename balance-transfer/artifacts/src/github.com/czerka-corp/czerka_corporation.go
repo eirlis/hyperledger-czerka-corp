@@ -20,13 +20,13 @@ type Mercenary struct {
 
 type Office struct {
 	Id          string `json:"id"`
-	Planets     []Planets `json:"planets"`
+	Planets     []Planet `json:"planets"`
 	Location    string `json:"location"`
 	Mercenaries []Mercenary `json:"mercenaries"`
 	Head        string `json:"head"`
 }
 
-type Planets struct {
+type Planet struct {
 	Id          string `json:"id"`
 	Name        string `json:"name"`
 	Region      string `json:"region"`
@@ -102,7 +102,12 @@ func (t *CzerkaContract) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	if function == "init" {
 		//initialize the chaincode state, used as reset
 		return t.Init(stub)
-	} else if function {
-		return
+	} else if function == "InsertMercenary" {
+		return InsertMercenary(stub, args)
+	} else if function == "UpdateMercenary" {
+		return UpdateMercenary(stub, args)
 	}
+	// error out
+	fmt.Println("Received unknown invoke function name - " + function)
+	return shim.Error("Received unknown invoke function name - '" + function + "'")
 }
