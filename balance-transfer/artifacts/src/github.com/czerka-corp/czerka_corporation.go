@@ -106,6 +106,10 @@ func (t *CzerkaContract) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 		return InsertMercenary(stub, args)
 	} else if function == "UpdateMercenary" {
 		return UpdateMercenary(stub, args)
+	} else if function == "InsertOffice" {
+		return InsertOffice(stub, args)
+	} else if function == "UpdateOffice" {
+		return UpdateMercenary(stub, args)
 	}
 	// error out
 	fmt.Println("Received unknown invoke function name - " + function)
