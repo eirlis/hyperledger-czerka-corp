@@ -7,7 +7,7 @@ version: '2'
 
 services:
 
-zookeeper0:
+  zookeeper0:
     container_name: zookeeper0
     extends:
       file: base.yaml
@@ -126,7 +126,7 @@ zookeeper0:
 #      - ./channel/crypto-config/peerOrganizations/org2.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
 #    container_name: ca_peerOrg2
 
-  orderer.example.com:
+  orderer0.example.com:
     container_name: orderer0.example.com
     extends:
       file: base.yaml
