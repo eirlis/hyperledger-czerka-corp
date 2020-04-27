@@ -20,15 +20,16 @@ type Mercenary struct {
 
 type Office struct {
 	Id          string `json:"id"`
-	Planets     []Planet `json:"planets"`
 	Location    string `json:"location"`
 	Mercenaries []Mercenary `json:"mercenaries"`
+	Supplies 	[]Supply `json: "supplies"`
 	Head        string `json:"head"`
 }
 
 type Planet struct {
 	Id          string `json:"id"`
 	Name        string `json:"name"`
+	Offices 	[]Office `json: "offices"`
 	Region      string `json:"region"`
 	Sector      string `json:"sector"`
 	System      string `json:"system"`
@@ -39,6 +40,7 @@ type Supply struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
 	Type string `json:"type"`
+	Status string `json:"status"`
 }
 
 func main() {

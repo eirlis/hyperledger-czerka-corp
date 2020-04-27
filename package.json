@@ -1,0 +1,29 @@
+{
+  "name": "hyperledger-czerka-corp",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon --watch app.js --watch controllers --watch app"
+  },
+  "engines": {
+    "node": ">=8.9.4 <9.0",
+    "npm": ">=5.6.0 <6.0"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "express-bearer-token": "^2.1.0",
+    "express-jwt": "^5.3.3",
+    "express-session": "^1.17.1",
+    "fabric-ca-client": "^1.4.8",
+    "fabric-client": "^1.4.8",
+    "fs-extra": "^2.0.0",
+    "jsonwebtoken": "^7.3.0",
+    "log4js": "^0.6.38",
+    "nodemon": "^2.0.3"
+  }
+}

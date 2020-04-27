@@ -1,36 +1,10 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# dotenv environment variables file
-.env
-
-.idea/
-balance-transfer/artifacts/crypto-config/*
-balance-transfer/artifacts/channel/
+.DS_Store
+__package-lock.json
+/node_modules/*
+/fabric-client-kv-org*
+artifacts/channel/crypto-config/*
+artifacts/channel/*.tx
+artifacts/channel/*.block
+artifacts/docker-compose.yaml
+artifacts/bin/*
+build/

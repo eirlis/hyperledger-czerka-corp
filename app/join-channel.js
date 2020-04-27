@@ -18,7 +18,7 @@ var path = require('path');
 var fs = require('fs');
 
 var Peer = require('fabric-client/lib/Peer.js');
-var EventHub = require('fabric-client/lib/EventHub.js');
+var EventHub = require('fabric-client/lib/ChannelEventHub.js');
 var tx_id = null;
 var nonce = null;
 var config = require('../config.json');
