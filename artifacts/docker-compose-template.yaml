@@ -41,92 +41,92 @@ services:
       - ./channel/crypto-config/peerOrganizations/org2.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca_peerOrg2
 
-  zookeeper0:
-    container_name: zookeeper0
-    extends:
-      file: base.yaml
-      service: zookeeper
-    environment:
-      - ZOO_MY_ID=1
-      - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+  # zookeeper0:
+  #   container_name: zookeeper0
+  #   extends:
+  #     file: base.yaml
+  #     service: zookeeper
+  #   environment:
+  #     - ZOO_MY_ID=1
+  #     - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
 
-  zookeeper1:
-    container_name: zookeeper1
-    extends:
-      file: base.yaml
-      service: zookeeper
-    environment:
-      - ZOO_MY_ID=2
-      - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+  # zookeeper1:
+  #   container_name: zookeeper1
+  #   extends:
+  #     file: base.yaml
+  #     service: zookeeper
+  #   environment:
+  #     - ZOO_MY_ID=2
+  #     - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
 
-  zookeeper2:
-    container_name: zookeeper2
-    extends:
-      file: base.yaml
-      service: zookeeper
-    environment:
-      - ZOO_MY_ID=3
-      - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+  # zookeeper2:
+  #   container_name: zookeeper2
+  #   extends:
+  #     file: base.yaml
+  #     service: zookeeper
+  #   environment:
+  #     - ZOO_MY_ID=3
+  #     - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
 
-  kafka0:
-    container_name: kafka0
-    extends:
-      file: base.yaml
-      service: kafka
-    environment:
-      - KAFKA_BROKER_ID=0
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
-    depends_on:
-      - zookeeper0
-      - zookeeper1
-      - zookeeper2
+  # kafka0:
+  #   container_name: kafka0
+  #   extends:
+  #     file: base.yaml
+  #     service: kafka
+  #   environment:
+  #     - KAFKA_BROKER_ID=0
+  #     - KAFKA_MIN_INSYNC_REPLICAS=2
+  #     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
+  #   depends_on:
+  #     - zookeeper0
+  #     - zookeeper1
+  #     - zookeeper2
 
-  kafka1:
-    container_name: kafka1
-    extends:
-      file: base.yaml
-      service: kafka
-    environment:
-      - KAFKA_BROKER_ID=1
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
-    depends_on:
-      - zookeeper0
-      - zookeeper1
-      - zookeeper2
+  # kafka1:
+  #   container_name: kafka1
+  #   extends:
+  #     file: base.yaml
+  #     service: kafka
+  #   environment:
+  #     - KAFKA_BROKER_ID=1
+  #     - KAFKA_MIN_INSYNC_REPLICAS=2
+  #     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
+  #   depends_on:
+  #     - zookeeper0
+  #     - zookeeper1
+  #     - zookeeper2
 
-  kafka2:
-    container_name: kafka2
-    extends:
-      file: base.yaml
-      service: kafka
-    environment:
-      - KAFKA_BROKER_ID=2
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
-    depends_on:
-      - zookeeper0
-      - zookeeper1
-      - zookeeper2
+  # kafka2:
+  #   container_name: kafka2
+  #   extends:
+  #     file: base.yaml
+  #     service: kafka
+  #   environment:
+  #     - KAFKA_BROKER_ID=2
+  #     - KAFKA_MIN_INSYNC_REPLICAS=2
+  #     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
+  #   depends_on:
+  #     - zookeeper0
+  #     - zookeeper1
+  #     - zookeeper2
 
-  kafka3:
-    container_name: kafka3
-    extends:
-      file: base.yaml
-      service: kafka
-    environment:
-      - KAFKA_BROKER_ID=3
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
-    depends_on:
-      - zookeeper0
-      - zookeeper1
-      - zookeeper2
+  # kafka3:
+  #   container_name: kafka3
+  #   extends:
+  #     file: base.yaml
+  #     service: kafka
+  #   environment:
+  #     - KAFKA_BROKER_ID=3
+  #     - KAFKA_MIN_INSYNC_REPLICAS=2
+  #     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
+  #   depends_on:
+  #     - zookeeper0
+  #     - zookeeper1
+  #     - zookeeper2
 
   orderer.example.com:
     container_name: orderer.example.com
@@ -142,9 +142,9 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerOrg1/tls/ca.crt, /etc/hyperledger/crypto/peerOrg2/tls/ca.crt]
-      - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
-      - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
-      - ORDERER_KAFKA_VERBOSE=true
+      # - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
+      # - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
+      # - ORDERER_KAFKA_VERBOSE=true
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
     command: orderer
     ports:
@@ -155,11 +155,11 @@ services:
         - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peerOrg1
         - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peerOrg2
         - ./channel/genesis.block:/var/hyperledger/orderer/genesis.block
-    depends_on:
-      - kafka0
-      - kafka1
-      - kafka2
-      - kafka3
+    # depends_on:
+    #   - kafka0
+    #   - kafka1
+    #   - kafka2
+    #   - kafka3
 
   peer0.org1.example.com:
     container_name: peer0.org1.example.com

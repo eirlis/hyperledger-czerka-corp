@@ -119,7 +119,7 @@ organizations:
     # this way. The SDK should allow applications to set the org admin identity via APIs, and only use
     # this route as an alternative when it exists.
     adminPrivateKey:
-      path: artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/07dbaeb24f1c2577f0cdaea56b0f73063a5514bb715df4b84ed3c2e7cacfc0ad_sk
+      path: artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/55ef980d25210db29a6c205a0b646ba7b08746beda5ee18228dcdea1936f59ea_sk
       # pem: |
       #       -----BEGIN PRIVATE KEY-----
       #       MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgx7VBkUeLaLsfsSnk
